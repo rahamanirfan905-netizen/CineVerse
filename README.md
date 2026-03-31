@@ -40,12 +40,6 @@ The objective of this project is to implement JavaScript concepts like API integ
 
 3. Open index.html in your browser
 
-##  Milestones
-
-* Milestone 1: Project setup and planning 
-* Milestone 2: API integration ⏳
-* Milestone 3: Core features implementation ⏳
-* Milestone 4: Deployment ⏳
 
 ##  Future Enhancements
 
