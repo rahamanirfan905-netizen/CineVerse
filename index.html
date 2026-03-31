@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVerse - Movie Explorer</title>
+  <meta name="description" content="Explore a massive collection of movies dynamically with CineVerse.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🎥</span>
+        <h1>CineVerse</h1>
+      </div>
+      <p class="subtitle">Discover your next favorite movie</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Feedback / Loading States -->
+      <div id="loading-indicator" class="loading-container">
+        <div class="spinner"></div>
+        <p>Fetching movies from the cinematic universe...</p>
+      </div>
+
+      <div id="error-message" class="error-container hidden">
+        <p>Oops! Something went wrong while fetching the data.</p>
+        <button id="retry-btn" class="btn">Try Again</button>
+      </div>
+
+      <!-- Movie Grid -->
+      <section id="movie-grid" class="movie-grid hidden">
+        <!-- Movie cards will be injected here via JavaScript -->
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 1111 CineVerse by rahamanirfan905-netizen | Milestone 2</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
