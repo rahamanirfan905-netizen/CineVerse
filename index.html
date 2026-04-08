@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CineVerse - Movie Explorer</title>
-  <meta name="description" content="Explore a massive collection of movies dynamically with CineVerse.">
+  <title>CineVerse — Discover Movies & Series</title>
+  <meta name="description" content="CineVerse is a dynamic movie explorer. Search, filter, sort, and save your favorite movies and series — powered by the OMDb API.">
+  <meta name="keywords" content="movies, series, movie explorer, OMDb, CineVerse, film database">
+  <meta name="author" content="rahamanirfan905-netizen">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
@@ -14,15 +17,44 @@
   <div class="app-container">
     <!-- Header -->
     <header class="header">
-      <div class="logo">
-        <span class="logo-icon">🎥</span>
-        <h1>CineVerse</h1>
+      <div class="header-top">
+        <div class="logo">
+          <span class="logo-icon">🎥</span>
+          <h1>CineVerse</h1>
+        </div>
+        <button id="theme-toggle" class="theme-toggle btn-icon" aria-label="Toggle Theme" title="Toggle Dark/Light Mode">
+          🌓
+        </button>
       </div>
       <p class="subtitle">Discover your next favorite movie</p>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
+      
+      <!-- Control Panel -->
+      <section class="controls-panel">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search titles dynamically (Debounced)..." aria-label="Search movies">
+        </div>
+        <div class="filter-container">
+          <select id="type-filter" aria-label="Filter by type">
+            <option value="">All Types</option>
+            <option value="movie">Movies</option>
+            <option value="series">Series</option>
+            <option value="episode">Episodes</option>
+          </select>
+          <select id="sort-filter" aria-label="Sort results">
+            <option value="">Sort By: Default</option>
+            <option value="year-desc">Year: Newest First</option>
+            <option value="year-asc">Year: Oldest First</option>
+            <option value="title-asc">Title: A - Z</option>
+            <option value="title-desc">Title: Z - A</option>
+          </select>
+          <button id="show-favorites-btn" class="btn btn-outline" data-state="all">My Favs ❤️</button>
+          <span class="results-count" id="results-count"></span>
+        </div>
+      </section>
 
       <!-- Feedback / Loading States -->
       <div id="loading-indicator" class="loading-container">
@@ -31,7 +63,8 @@
       </div>
 
       <div id="error-message" class="error-container hidden">
-        <p>Oops! Something went wrong while fetching the data.</p>
+        <div class="error-icon">⚠️</div>
+        <p>Oops! Something went wrong while fetching data from the API.</p>
         <button id="retry-btn" class="btn">Try Again</button>
       </div>
 
@@ -42,9 +75,19 @@
 
     </main>
 
+    <!-- Movie Detail Modal -->
+    <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-label="Movie Details">
+      <div class="modal-card">
+        <button id="modal-close" class="modal-close" aria-label="Close modal">✕</button>
+        <div class="modal-body" id="modal-body">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 1111 CineVerse by rahamanirfan905-netizen | Milestone 2</p>
+      <p>&copy; 2024 <strong>CineVerse</strong> by <a href="https://github.com/rahamanirfan905-netizen" target="_blank" rel="noopener">rahamanirfan905-netizen</a> | Milestones 1–4 ✅</p>
     </footer>
   </div>
 
